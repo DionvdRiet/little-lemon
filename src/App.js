@@ -3,30 +3,25 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/HeroSection';
 import Specials from './components/Specials';
+import BookingPage from './components/BookingPage'; // Importeer je nieuwe pagina
 import Footer from './components/Footer';
-// Eventueel kun je BookingPage ook importeren als je die al hebt:
-// import BookingPage from './components/BookingPage';
 
 function App() {
   return (
     <>
-      <Header />
+      <Header /> {/* Blijft altijd op elke pagina zichtbaar */}
 
       <main>
         <Routes>
-          {/* De homepagina bevat de Hero en Specials */}
-          <Route path="/" element={
-            <>
-              <Hero />
-              <Specials />
-            </>
-          } />
-          {/* Hier komt straks je reserveringspagina */}
-          {/* <Route path="/booking" element={<BookingPage />} /> */}
+          {/* Als je op '/' bent, zie je de homepagina */}
+          <Route path="/" element={<><Hero /><Specials /></>} />
+          
+          {/* Als je op '/booking' bent, laadt hij jouw BookingPage */}
+          <Route path="/booking" element={<BookingPage />} />
         </Routes>
       </main>
 
-      <Footer />
+      <Footer /> {/* Blijft ook altijd zichtbaar */}
     </>
   );
 }
