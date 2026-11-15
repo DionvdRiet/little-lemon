@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import React, { useReducer } from 'react';
 import BookingForm from './BookingForm';
 
@@ -27,5 +27,7 @@ function BookingPage() {
         </div>
     );
 }
+
+export { initializeTimes };
 
 export default BookingPage;

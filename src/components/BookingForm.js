@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import '../App.css';
 
 // 1. Vang hier nu ook 'dispatch' op via de props
 function BookingForm({ availableTimes, dispatch }) {
