@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/HeroSection';
 import Specials from './components/Specials';
-import BookingPage from './components/BookingPage'; // Importeer je nieuwe pagina
+import BookingPage from './components/BookingPage';
 import Footer from './components/Footer';
 
 function App() {
