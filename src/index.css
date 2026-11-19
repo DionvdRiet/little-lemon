@@ -268,3 +268,17 @@ code {
     gap: 2rem;
   }
 }
+
+.bookingConfirmation {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 32rem;
+  border: #333333 1px solid;
+}
+
+.label{
+  padding: 0.5rem 1rem;
+  background-color: #EE9972;
+  color: #333333;
+}

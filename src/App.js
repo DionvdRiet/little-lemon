@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/HeroSection';
 import Specials from './components/Specials';
 import BookingPage from './components/BookingPage';
+import ConfirmedBooking from './components/confirmedBooking';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           
           {/* Als je op '/booking' bent, laadt hij jouw BookingPage */}
           <Route path="/booking" element={<BookingPage />} />
+          <Route path="/confirmed" element={<ConfirmedBooking />} />
         </Routes>
       </main>
 

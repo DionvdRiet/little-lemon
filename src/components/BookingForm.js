@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../App.css';
 
 // 1. Vang hier nu ook 'dispatch' op via de props
-function BookingForm({ availableTimes, dispatch }) {
+function BookingForm({ availableTimes, dispatch, submitForm }) {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("17:00"); 
     const [guests, setGuests] = useState(1);
@@ -10,7 +10,13 @@ function BookingForm({ availableTimes, dispatch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form submitted:", { date, time, guests, occasion });
+        const formData = {
+            date,
+            time,
+            guests,
+            occasion,
+        };
+        submitForm(formData);
     };
 
     return (
