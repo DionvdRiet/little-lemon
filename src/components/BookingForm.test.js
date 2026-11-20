@@ -1,5 +1,5 @@
-// import { render, screen } from "@testing-library/react";
-// import BookingForm from './BookingForm';
+import { render, screen } from "@testing-library/react";
+import BookingForm from './BookingForm';
 
 // test('Renders the BookingForm label', () => {
 //     render(<BookingForm availableTimes={[]} />);
@@ -8,8 +8,8 @@
 //     expect(labelElement).toBeInTheDocument();
 // });
 
-// Importeer de functie vanuit je BookingPage (zorg dat je 'initializeTimes' daar exporteert!)
-// import { initializeTimes } from './BookingPage';
+import { initializeTimes, updateTimes } from './BookingPage';
+import { fetchAPI } from './api';
 
 // test('initializeTimes returns the correct expected initial available times', () => {
 //     // 1. Roep de functie aan
@@ -21,19 +21,38 @@
 //     expect(initialTimes).toEqual(expectedTimes);
 // });
 
+jest.mock('../api', () => ({
+    fetchAPI: jest.fn(() => ['17:00', '18:00', '19:00', '20:00']),
+}));
 
-import { updateTimes } from './BookingPage';
+test('initializeTimes returns the expected non-empty array of available times', () => {
+    const initialTimes = initializeTimes();
 
-test('updateTimes returns the same state that is provided', () => {
-    // 1. Maak een initiële state aan (een array met tijden om te testen)
-    const initialState = ["17:00", "18:00", "19:00"];
-    
-    // 2. Maak een actie aan (die je straks via dispatch meestuurt)
-    const action = { type: 'UPDATE_TIMES' };
+    expect(fetchAPI).toHaveBeenCalled();
+    expect(Array.isArray(initialTimes)).toBe(true);
+    expect(initialTimes.length).toBeGreaterThan(0);
+    expect(initialTimes).toEqual(['17:00', '18:00', '19:00', '20:00']);
+});
 
-    // 3. Roep updateTimes aan met de state en action
+
+// test('updateTimes returns the same state that is provided', () => {
+//     const initialState = ["17:00", "18:00", "19:00"];
+
+//     const action = { type: 'UPDATE_TIMES' };
+
+//     const result = updateTimes(initialState, action);
+
+//     expect(result).toEqual(initialState);
+// });
+
+test('updateTimes returns updated times based on the dispatched date', () => {
+    const initialState = ['17:00', '18:00', '19:00'];
+    const action = { type: 'UPDATE_TIMES', date: '2026-11-20' };
+
     const result = updateTimes(initialState, action);
 
-    // 4. Controleer of het resultaat exact gelijk is aan de state die je erin stopte
-    expect(result).toEqual(initialState);
+    expect(fetchAPI).toHaveBeenCalled();
+    expect(Array.isArray(result)).toBe(true);
+    expect(result.length).toBeGreaterThan(0);
+    expect(result).toEqual(['17:00', '18:00', '19:00', '20:00']);
 });
