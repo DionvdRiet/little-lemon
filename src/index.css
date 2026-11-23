@@ -201,7 +201,7 @@ code {
 
 /* --- Footer --- */
 .footer {
-  background-color: #333333;
+  background-color: #495e57;
   color: #ffffff;
   text-align: center;
   padding: 2rem;
@@ -272,13 +272,56 @@ code {
 .bookingConfirmation {
   display: flex;
   flex-direction: column;
-  width: 20rem;
-  height: 32rem;
-  border: #333333 1px solid;
+  width: 24rem;
+  border: #D4D4D4 1px solid;
+  align-self: center;
+  border-radius: 1rem;
+  margin: 40px auto;
+  overflow: hidden;
 }
+
+  .bookingConfirmation img{
+    border-radius: 1rem 1rem 0 0;
+    margin-left: 0;
+    height: 16rem;
+  }
+
+  .bookingConfirmation *{
+    margin-left: 1rem;
+  }
+
+  .bookingConfirmation h2{
+    font-size: 1.125rem;
+    font-weight: 700;
+    /* margin-bottom: -0.5rem; */
+  }
+
+  .bookingConfirmation p{
+    margin-bottom: 2.5rem;
+  }
 
 .label{
   padding: 0.5rem 1rem;
-  background-color: #EE9972;
+  background-color: #F4CE14;
   color: #333333;
+  width: fit-content;
+  /* margin-top: 1rem; */
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
 }
+
+input, select{
+  border: 1px solid #D4D4D4;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.booking-form input[type="submit"]{
+  margin-top: 2rem;
+  background-color: #F4CE14;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+}
+

@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.booking-form {
+    display: grid;
+    max-width: 280px;
+    width: 100%;
+    gap: 16px;
+}
+
+.booking-page {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.booking-page .booking-form {
+    margin: 24px auto 0;
+    text-align: left;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-main {
+    flex: 1; /* Duwt de footer omlaag als de pagina kort is */
+}
+
+footer {
+    width: 100%;
+    /* Geen position: absolute en geen bottom: 0 */
+}

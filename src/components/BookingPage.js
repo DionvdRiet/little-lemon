@@ -19,19 +19,19 @@ function BookingPage() {
     const submitForm = (formData) => {
         const isSubmitted = submitAPI(formData);
         if (isSubmitted) {
-            navigate('/confirmed');
+            navigate('/confirmed', { state: formData });
         }
     };
 
     return (
-        <div className="booking-page">
+       <section className="booking-page">
             <h1>Reserve a Table</h1>
             <BookingForm
                 availableTimes={availableTimes}
                 dispatch={dispatch}
                 submitForm={submitForm}
             />
-        </div>
+        </section>
     );
 }
 

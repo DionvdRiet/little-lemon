@@ -10,21 +10,24 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <Header /> {/* Blijft altijd op elke pagina zichtbaar */}
+    <div className="app-container">
+      <Header /> {}
 
-      <main>
+      <main className="app-main">
         <Routes>
-          {/* Als je op '/' bent, zie je de homepagina */}
+          {}
           <Route path="/" element={<><Hero /><Specials /></>} />
-          
-          {/* Als je op '/booking' bent, laadt hij jouw BookingPage */}
+        
+          {}
           <Route path="/booking" element={<BookingPage />} />
           <Route path="/confirmed" element={<ConfirmedBooking />} />
         </Routes>
       </main>
 
-      <Footer /> {/* Blijft ook altijd zichtbaar */}
+      <Footer /> {}
+      </div>
     </>
+  
   );
 }
 
