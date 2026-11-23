@@ -10,9 +10,9 @@ function formatBookingLabel(dateString, time, guests) {
 
     const dateObj = new Date(year, month - 1, day);
 
-    // Korte Engelse dagnaam, bijv. "Tue"
+
     const weekday = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
-    // Dag en Nederlandse maand zonder jaartal, bijv. "24 november"
+
     const dayAndMonth = dateObj.toLocaleDateString('nl-NL', {
         day: 'numeric',
         month: 'long',
@@ -37,7 +37,7 @@ function ConfirmedBooking() {
             <div className='label'>
                 {formatBookingLabel(date, time, guests)}
             </div>
-            {/* <p>We can't wait to serve you</p> */}
+            {}
         </div>
     );
 }

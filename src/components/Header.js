@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // 1. Importeer Link
+import { Link } from 'react-router-dom';
 import '../App.css';
 
 function Header(){
@@ -10,7 +10,7 @@ function Header(){
     </div>
     <nav>
       <ul className="nav-links">
-        {/* 2. Vervang <a href="..."> door <Link to="..."> */}
+        {}
         <li><Link to="/">Home</Link></li>
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>

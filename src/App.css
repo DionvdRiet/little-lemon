@@ -63,10 +63,9 @@
 }
 
 .app-main {
-    flex: 1; /* Duwt de footer omlaag als de pagina kort is */
+    flex: 1;
 }
 
 footer {
     width: 100%;
-    /* Geen position: absolute en geen bottom: 0 */
 }

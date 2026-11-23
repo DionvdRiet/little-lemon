@@ -18,7 +18,7 @@ function HeroSection() {
         </Link>
         </div>
         <div className="hero-image">
-        {/* Voeg hier straks je afbeelding toe */}
+        {}
         <img src={chefs1} alt="Greek Salad" className="hero-img" />
         </div>
     </section>
